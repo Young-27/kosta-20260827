@@ -1,0 +1,14 @@
+{
+  "name": "doc-search-cli",
+  "version": "0.3.0",
+  "description": "사내 문서 색인·검색 CLI",
+  "type": "module",
+  "bin": { "docsearch": "./src/cli.js" },
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/cli.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {},
+  "devDependencies": {}
+}
