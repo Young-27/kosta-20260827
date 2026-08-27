@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Grob|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/block-pretooluse.js",
+            "statusMessage": "모든 도구 호출을 테스트용으로 차단하는 중"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -30,6 +30,17 @@ node src/cli.js index ./docs  # 색인
 node src/cli.js find "검색어" # 검색
 ```
 
+## 오케스트레이션 문서
+
+작업 위임 방식과 실행 흐름은 [`docs/orchestration/README.md`](docs/orchestration/README.md)에서 확인한다.
+
+- [순차 오케스트레이션](docs/orchestration/sequential.md): `/pipeline`
+- [동시 오케스트레이션](docs/orchestration/concurrent.md): `/parallel-check`
+- [동적 위임](docs/orchestration/dynamic-delegation.md): `/dispatch`
+- [핸드오프](docs/orchestration/handoff.md): `/handoff`
+
+커맨드의 동작을 변경할 때는 관련 `.claude/commands/` 원본 정의와 이 문서를 함께 갱신해 설명이 실제 규칙과 어긋나지 않게 한다.
+
 ## 미구현 항목
 
 - 색인 갱신 시 삭제된 파일이 색인에 남는다
