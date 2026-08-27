@@ -1,7 +1,7 @@
 ---
 name: requirements-analyst
 description: 자연어 요구를 사용자 스토리와 API 명세로 바꾼다. 코드는 쓰지 않는다.
-tools: Read, Grep, Glob
+tools: Read, Grep, Glob, Write
 model: inherit
 ---
 

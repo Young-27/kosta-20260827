@@ -5,8 +5,11 @@
  * 이미 만든 색인과 새 검색어가 안 맞는다 — 규약의 src/shared/ 항목.
  */
 
+/** 토큰의 최소 길이. */
+export const MIN_TOKEN_LENGTH = 2;
+
 /** 토큰으로 치지 않는 낱말. */
-const STOP_WORDS = new Set(['그리고', '또는', '하지만', 'the', 'and', 'or']);
+const STOP_WORDS = new Set(['그리고', '또는', '하지만', '그래서', '따라서', 'the', 'and', 'or']);
 
 /**
  * 문장을 토큰 배열로 나눈다.
@@ -20,7 +23,7 @@ export function tokenize(text) {
   const tokens = [];
 
   for (const word of words) {
-    if (word.length <= 1 || STOP_WORDS.has(word)) {
+    if (word.length < MIN_TOKEN_LENGTH || STOP_WORDS.has(word)) {
       continue;
     }
     tokens.push(word);

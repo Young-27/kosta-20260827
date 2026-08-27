@@ -1,13 +1,21 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { tokenize, countTokens } from '../src/shared/tokenize.js';
+import {
+  tokenize,
+  countTokens,
+  MIN_TOKEN_LENGTH,
+} from '../src/shared/tokenize.js';
+
+test('토큰 최소 길이 기본값을 사용한다', () => {
+  assert.equal(MIN_TOKEN_LENGTH, 2);
+});
 
 test('한 글자 토큰은 버린다', () => {
   assert.deepEqual(tokenize('a bb ccc'), ['bb', 'ccc']);
 });
 
 test('불용어를 버린다', () => {
-  assert.deepEqual(tokenize('배포 그리고 롤백'), ['배포', '롤백']);
+  assert.deepEqual(tokenize('배포 그리고 그래서 따라서 롤백'), ['배포', '롤백']);
 });
 
 test('대소문자를 낮춘다', () => {

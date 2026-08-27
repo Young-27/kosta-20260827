@@ -3,6 +3,7 @@ name: implementer
 description: 분석 결과를 받아 기존 패턴을 따라 구현한다.
 tools: Read, Grep, Glob, Edit, Write, Bash
 model: opus
+isolation: worktree
 ---
 
 

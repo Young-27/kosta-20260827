@@ -9,6 +9,7 @@ import { score, rank } from './rank.js';
  * @typedef {object} SearchResult
  * @property {string} path
  * @property {number} score
+ * @property {string} preview  색인에 저장된 문서 첫 줄
  */
 
 /**
@@ -30,7 +31,9 @@ export async function search(root, query, limit = 10) {
 
   for (const entry of index) {
     const value = score(entry, terms);
-    if (value > 0) hits.push({ path: entry.path, score: value });
+    if (value > 0) {
+      hits.push({ path: entry.path, score: value, preview: entry.preview ?? '' });
+    }
   }
 
   return rank(hits).slice(0, limit);

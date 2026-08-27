@@ -27,8 +27,8 @@ async function main(argv) {
       console.log('결과 없음');
       return 1;
     }
-    for (const { path, score } of results) {
-      console.log(`${score.toFixed(4)}  ${path}`);
+    for (const { path, score, preview } of results) {
+      console.log(`${score.toFixed(4)}  ${path}  ${preview}`);
     }
     return 0;
   }
