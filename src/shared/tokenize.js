@@ -16,11 +16,17 @@ const STOP_WORDS = new Set(['그리고', '또는', '하지만', 'the', 'and', 'o
  * @returns {string[]}
  */
 export function tokenize(text) {
-  return text
-    .toLowerCase()
-    .split(/[^\p{L}\p{N}]+/u)
-    .filter((t) => t.length > 1)
-    .filter((t) => !STOP_WORDS.has(t));
+  const words = text.toLowerCase().split(/[^\p{L}\p{N}]+/u);
+  const tokens = [];
+
+  for (const word of words) {
+    if (word.length <= 1 || STOP_WORDS.has(word)) {
+      continue;
+    }
+    tokens.push(word);
+  }
+
+  return tokens;
 }
 
 /**
